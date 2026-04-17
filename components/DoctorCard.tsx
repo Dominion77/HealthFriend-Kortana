@@ -11,10 +11,10 @@ interface DoctorCardProps {
 export function DoctorCard({ doctor }: DoctorCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="p-6">
-        <div className="flex items-start gap-4 mb-4">
+      <div className="p-6 text-center">
+        <div className="flex flex-col items-center mb-4">
           {doctor.image_url ? (
-            <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+            <div className="w-16 h-16 rounded-full overflow-hidden mb-3">
               <Image
                 src={doctor.image_url}
                 alt={doctor.name}
@@ -24,18 +24,16 @@ export function DoctorCard({ doctor }: DoctorCardProps) {
               />
             </div>
           ) : (
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-2xl font-bold text-blue-600 flex-shrink-0">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-2xl font-bold text-blue-600 mb-3">
               {doctor.name.charAt(0)}
             </div>
           )}
-          <div className="flex-1">
+          <div>
             <h3 className="text-xl font-bold text-gray-900">{doctor.name}</h3>
             <p className="text-sm text-gray-600">{doctor.qualifications}</p>
             <p className="text-sm font-medium text-blue-600 mt-1">{doctor.specialty}</p>
           </div>
         </div>
-
-        <p className="text-gray-700 text-sm mb-4 line-clamp-3">{doctor.bio}</p>
 
         <div className="flex items-center justify-between pt-4 border-t border-gray-200">
           <div>

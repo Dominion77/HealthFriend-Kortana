@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ConnectButton } from "@/components/ConnectButton";
+import { MedicalMarquee } from "@/components/MedicalMarquee";
 import { IoShieldCheckmark, IoFlash, IoGlobe } from "react-icons/io5";
 import { BsActivity } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
@@ -143,6 +144,9 @@ const appointment = await supabase
           </div>
         </div>
       </section>
+
+      {/* Medical Marquee */}
+      <MedicalMarquee />
 
       {/* Footer */}
       <footer className="border-t border-border bg-white">
